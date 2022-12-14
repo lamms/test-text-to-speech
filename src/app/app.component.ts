@@ -29,5 +29,6 @@ export class AppComponent {
 
       `data:${mimeType};base64, ${base64Data}`
     );
-  }
-}
+  } 
+  
+} 
