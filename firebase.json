@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/test-text-to-speech",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
