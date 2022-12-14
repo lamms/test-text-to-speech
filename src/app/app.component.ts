@@ -20,7 +20,7 @@ export class AppComponent {
   getVoice() {
     this.textToSpeechService
       .getVoice(this.voiceText)
-      .subscribe((audioData: AudioData) => {
+      .subscribe((audioData: AudioData) => { 
         this.audioData = this.transform('audio/mpeg', audioData.audioContent);
       });
   }
@@ -28,7 +28,7 @@ export class AppComponent {
     return this.sanitizer.bypassSecurityTrustResourceUrl(
 
       `data:${mimeType};base64, ${base64Data}`
-    );
+    );  
   } 
-  
+
 } 
