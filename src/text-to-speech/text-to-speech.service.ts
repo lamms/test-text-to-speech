@@ -24,7 +24,7 @@ export class TextToSpeechService  {
     const body: AudioRequest = {
       input: { ssml },
       audioConfig: { audioEncoding: 'MP3', pitch: '0.00', speakingRate: '1.00' },
-      voice: { languageCode: 'vi-VN', ssmlGender: 'FEMALE' }
+      voice: { languageCode: 'vi-VN', ssmlGender: 'MALE' }
     };
 
     return this.httpClient.post<AudioData>(GoogleApi.texttospeech.url, body, { params });

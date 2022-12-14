@@ -11,6 +11,7 @@ import { TextToSpeechService } from '../text-to-speech/text-to-speech.service';
 export class AppComponent {
   audioData = undefined;
   title = 'Text to speech';
+  voiceText:string;
   constructor(
     injector: Injector,
     private textToSpeechService: TextToSpeechService,
@@ -18,14 +19,14 @@ export class AppComponent {
   ) { }
   getVoice() {
     this.textToSpeechService
-      .getVoice('Xe biển số 29S6-2 2 3 3 8 xin mời vào trong bãi gửi xe để làm thủ rục ')
+      .getVoice(this.voiceText)
       .subscribe((audioData: AudioData) => {
         this.audioData = this.transform('audio/mpeg', audioData.audioContent);
       });
   }
-  transform(mimeType: string, base64Data: string): SafeResourceUrl {  
+  transform(mimeType: string, base64Data: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(
-        
+
       `data:${mimeType};base64, ${base64Data}`
     );
   } 
